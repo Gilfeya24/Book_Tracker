@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>BookNest | Personal Book Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="container">
+
+            <h1>📚 BookNest</h1>
+
+            <p>Your Personal Reading Companion</p>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- WELCOME SECTION -->
+
+        <section class="welcome">
+
+            <h2>My Reading Dashboard</h2>
+
+            <p>
+                Organize your books, track your reading
+                progress, and build better reading habits.
+            </p>
+
+        </section>
+
+
+        <!-- STATISTICS SECTION -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <h3 id="totalBooks">0</h3>
+
+                <p>Total Books</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3 id="toReadBooks">0</h3>
+
+                <p>To Read</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3 id="readingBooks">0</h3>
+
+                <p>Reading</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3 id="finishedBooks">0</h3>
+
+                <p>Finished</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ADD BOOK SECTION -->
+
+        <section class="form-section">
+
+            <h2>➕ Add a New Book</h2>
+
+            <form id="bookForm" novalidate>
+
+                <!-- BOOK TITLE -->
+
+                <div class="form-group">
+
+                    <label for="bookTitle">
+                        Book Title *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="bookTitle"
+                        placeholder="Enter book title"
+                        maxlength="200"
+                    >
+
+                    <small
+                        class="error"
+                        id="titleError">
+                    </small>
+
+                </div>
+
+
+                <!-- AUTHOR -->
+
+                <div class="form-group">
+
+                    <label for="bookAuthor">
+                        Author *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="bookAuthor"
+                        placeholder="Enter author name"
+                        maxlength="150"
+                    >
+
+                    <small
+                        class="error"
+                        id="authorError">
+                    </small>
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="form-group">
+
+                    <label for="bookStatus">
+                        Reading Status
+                    </label>
+
+                    <select id="bookStatus">
+
+                        <option value="To read">
+                            To read
+                        </option>
+
+                        <option value="Reading">
+                            Reading
+                        </option>
+
+                        <option value="Finished">
+                            Finished
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ADD BUTTON -->
+
+                <button
+                    type="submit"
+                    class="add-btn">
+
+                    + Add Book
+
+                </button>
+
+                <p
+                    id="successMessage"
+                    class="success-message"
+                    role="status"
+                    aria-live="polite">
+                </p>
+
+            </form>
+
+        </section>
+
+
+        <!-- BOOK LIBRARY -->
+
+        <section class="library-section">
+
+            <div class="library-header">
+
+                <h2>📖 My Library</h2>
+
+                <p>
+                    Manage your personal book collection
+                </p>
+
+            </div>
+
+
+            <!-- SEARCH -->
+
+            <div class="search-section">
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="🔍 Search by title or author..."
+                    aria-label="Search books by title or author"
+                >
+
+            </div>
+
+
+            <!-- FILTER BUTTONS -->
+
+            <div class="filters">
+
+                <button
+                    type="button"
+                    class="filter-btn active"
+                    data-filter="All">
+
+                    All
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="filter-btn"
+                    data-filter="To read">
+
+                    To Read
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="filter-btn"
+                    data-filter="Reading">
+
+                    Reading
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="filter-btn"
+                    data-filter="Finished">
+
+                    Finished
+
+                </button>
+
+            </div>
+
+
+            <!-- BOOK LIST -->
+
+            <div id="bookList" class="book-list">
+
+            </div>
+
+
+            <!-- EMPTY MESSAGE -->
+
+            <div
+                id="emptyMessage"
+                class="empty-message">
+
+                <h3>📚 No books found</h3>
+
+                <p>
+                    Add your first book to get started!
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            Made with ❤️ | BookNest © 2026
+        </p>
+
+    </footer>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
